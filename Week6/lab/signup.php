@@ -11,6 +11,12 @@ $email = filter_input(INPUT_POST, 'email');
 $message = '';
 $password = filter_input(INPUT_POST, 'password');
 
+
+
+
+
+
+
 if (empty($email)) {
     $message .= 'email field required.';
 }else if(filter_var($email, FILTER_VALIDATE_EMAIL) == false)
@@ -23,7 +29,7 @@ if (empty($email)) {
 
 if (empty($password)) {
     $message .= 'password field required.';
-}else if ($password < 4) {
+}else if  (strlen($password) < 4) {
     $message .= 'The Password must be at least 4 characters.';
 }
 
@@ -45,7 +51,7 @@ $dbs->bindParam(':password', $password, PDO::PARAM_STR);
 if ($dbs->execute() && $dbs->rowcount() > 0) {
     
     echo '<h1> update complete</h1>';
-    
+     
 } else{
     echo '<h1> user', 'was <strong> NOT </strong>updated</h1>';
 }
