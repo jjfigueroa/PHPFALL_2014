@@ -15,6 +15,7 @@
     $discount = '';
     $discount_price = '';
     //get the data from the form
+    
     $product_description = $_POST['product_description'];
     $list_price = $_POST['list_price'];
     $discount_percent = $_POST['discount_percent'];
@@ -25,18 +26,18 @@
          {
         $error_message = 'description is a required field.'; 
          }
-    else if ( !is_string ($product_description) )
+     if ( !is_string ($product_description) )
         {
         $error_message = 'Descriptions must be only letters';
         }
          
             
         
-     else if (!is_numeric($list_price))
+     if (!is_numeric($list_price))
      {
          $error_message = 'List price should be numbers only';
      }
-     else if(!is_numeric($discount_percent))
+    if(!is_numeric($discount_percent))
      {
          $error_message = 'discount Percent should be numbers only';
      }
