@@ -39,7 +39,7 @@ if (!empty($message)){
     exit();
 }else{ 
     
-    $password = sha1($password);
+    //$password = sha1($password);
 
 
 $db = new PDO("mysql:host=localhost;dbname=phpclassfall2014", "root", "");

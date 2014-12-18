@@ -21,7 +21,7 @@ function check_login($username, $password){
     }
 }
 
-var_dump(check_login("emailtrue", "passwordtrue"));
+var_dump(check_login("test@test1.com", "test"));
 
 
 
@@ -41,4 +41,4 @@ function valid_login($username, $password){
     }
 }
 
-var_dump(check_login("emailvalid", "passwordvalid"));
+var_dump(check_login("test@test1.com", "test"));
